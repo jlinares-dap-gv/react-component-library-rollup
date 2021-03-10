@@ -2,7 +2,11 @@ import React from "react";
 
 import "./styles.scss";
 
-const Button = ({ theme }) => (
+export interface ButtonProps {
+  theme: "primary" | "secondary";
+}
+
+const Button: React.FC<ButtonProps> = ({ theme }) => (
   <button
     data-testid="btn"
     className={`btn btn-${theme}`}

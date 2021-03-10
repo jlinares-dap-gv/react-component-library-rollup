@@ -2,7 +2,10 @@ import React from "react";
 
 import "./styles.scss";
 
-const TestComponent = ({ theme }) => (
+export interface TestComponentProps {
+  theme: "primary" | "secondary";
+}
+const TestComponent: React.FC<TestComponentProps> = ({ theme }) => (
   <div
     data-testid="test-component"
     className={`test-component test-component-${theme}`}
