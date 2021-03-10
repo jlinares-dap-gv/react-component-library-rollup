@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./styles.scss";
+import "./Button.scss";
 
 export interface ButtonProps {
   theme: "primary" | "secondary";
