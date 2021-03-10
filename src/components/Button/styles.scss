@@ -1,0 +1,12 @@
+.btn {
+    background-color: #0000ff;
+    border-radius: 25%;
+    padding: 20px 10px;
+    text-align: center;
+    color: black;
+
+    &-secondary {
+        background-color: black;
+        color: white;
+    }
+}
