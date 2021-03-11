@@ -5,24 +5,25 @@ import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
 
 const packageJson = require("./package.json");
+const rollupPlugin = require("./rollupPlugin");
 
 export default {
-  input: "src/index.ts",
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-    }
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
-    postcss()
-  ]
+    input: "src/index.ts",
+    output: [{
+            file: packageJson.main,
+            format: "cjs",
+        },
+        {
+            file: packageJson.module,
+            format: "esm",
+        }
+    ],
+    plugins: [
+        peerDepsExternal(),
+        resolve(),
+        commonjs(),
+        typescript({ useTsconfigDeclarationDir: true }),
+        postcss(),
+        rollupPlugin()
+    ]
 };
